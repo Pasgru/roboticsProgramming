@@ -8,7 +8,7 @@ def getconn():
 
 @app.route("/")
 def credit():
-    return """<h1>Credit App</h1>
+    return """<h1>Credit App on my Laptop</h1>
     <ul>
     <li><a href=clients>Clients</a></li>
     <li><a href=newclient>New Client</a></li>
@@ -34,19 +34,19 @@ def clients():
     html = "<h3>Clients</h3><table>\n" 
     for row in rows:
         html +=  "<tr><td align=right> %d <td align=right> %.2f\n" % row
-    return html + "</table>\n"
     conn.close()
+    return html + "</table>\n"
     
 @app.route('/newclient')
 def newclient():
     return """<h3>New Client</h3>
     <form action=insertclient method=POST>
     <table>
-    <tr><td>Client ID:<td><input type=text name=id>
-    <tr><td>Credit Limit:<td><input type=text name=lim>
-    <tr><td>Sex:<td><input type=text name=sex value=1>
-    <tr><td>Education:<td><input type=text name=edu value=1>
-    <tr><td>Marriage:<td><input type=text name=mar value=1>
+    <tr><td>Client ID:<td><input type=number name=id>
+    <tr><td>Credit Limit:<td><input type=number name=lim>
+    <tr><td>Sex:<td><input type=number name=sex value=1>
+    <tr><td>Education:<td><input type=number name=edu value=1>
+    <tr><td>Marriage:<td><input type=number name=mar value=1>
     <tr><td>Age:<td><input type=text name=age value=30>
     </table><input type=submit value=OK></form>"""
        

@@ -8,3 +8,12 @@ def get_new_client_id():
     
 def get_new_client_limit():
     return "%d" % (10000 * random.randint(1,5))
+
+def create_my_file(fn):
+    fp = open(fn, 'w')
+    fp.close()
+
+def append_my_file(fn, txt):
+    fp = open(fn, 'a')
+    fp.write(txt + '\n')
+    fp.close()
