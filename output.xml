@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.1 (Python 3.12.3 on linux)" generated="2024-10-16T17:24:56.340654" rpa="false" schemaversion="5">
+<suite id="s1" name="T5" source="/home/pascal/Nextcloud/03_Education/RoboticsProgramming/t5.rob">
+<test id="s1-t1" name="XPath" line="10">
+<kw name="Check Home Page">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2024-10-16T17:24:56.441992" level="INFO">Opening browser 'Chrome' to base url 'http://localhost:8080/'.</msg>
+<arg>${LOGIN URL}</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2024-10-16T17:24:56.441751" elapsed="0.645963"/>
+</kw>
+<kw name="Element Should Contain" owner="SeleniumLibrary">
+<msg time="2024-10-16T17:24:57.135852" level="INFO">Element '//h1' contains text 'Credit App'.</msg>
+<arg>//h1</arg>
+<arg>Credit App</arg>
+<doc>Verifies that element ``locator`` contains text ``expected``.</doc>
+<status status="PASS" start="2024-10-16T17:24:57.088301" elapsed="0.047790"/>
+</kw>
+<kw name="Element Should Contain" owner="SeleniumLibrary">
+<msg time="2024-10-16T17:24:57.168173" level="INFO">Element '//a' contains text 'Clients'.</msg>
+<arg>//a</arg>
+<arg>Clients</arg>
+<doc>Verifies that element ``locator`` contains text ``expected``.</doc>
+<status status="PASS" start="2024-10-16T17:24:57.136515" elapsed="0.031828"/>
+</kw>
+<kw name="Element Should Contain" owner="SeleniumLibrary">
+<msg time="2024-10-16T17:24:57.195364" level="INFO">Element '//a[contains(text(), "Init DB")]' contains text 'Init DB'.</msg>
+<arg>//a[contains(text(), "Init DB")]</arg>
+<arg>Init DB</arg>
+<doc>Verifies that element ``locator`` contains text ``expected``.</doc>
+<status status="PASS" start="2024-10-16T17:24:57.168707" elapsed="0.026818"/>
+</kw>
+<status status="PASS" start="2024-10-16T17:24:56.441165" elapsed="0.754541"/>
+</kw>
+<kw name="Close Browser" owner="SeleniumLibrary" type="TEARDOWN">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2024-10-16T17:24:57.196150" elapsed="0.099839"/>
+</kw>
+<status status="PASS" start="2024-10-16T17:24:56.440616" elapsed="0.855619"/>
+</test>
+<doc>Check page for header and links</doc>
+<status status="PASS" start="2024-10-16T17:24:56.341419" elapsed="0.955460"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="1" fail="0" skip="0" id="s1" name="T5">T5</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
