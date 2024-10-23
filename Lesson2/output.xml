@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.1.1 (Python 3.12.3 on linux)" generated="2024-10-23T14:30:06.011153" rpa="false" schemaversion="5">
+<suite id="s1" name="T6" source="/home/pascal/roboticsProgramming/Lesson2/t6.rob">
+<test id="s1-t1" name="Valid App Start Page" line="12">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2024-10-23T14:30:06.127855" level="INFO">Opening browser 'Chrome' to base url 'http://localhost:8080'.</msg>
+<arg>${LOGIN URL}</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2024-10-23T14:30:06.127582" elapsed="1.664620"/>
+</kw>
+<kw name="Page Should Contain Link" owner="SeleniumLibrary">
+<msg time="2024-10-23T14:30:07.838248" level="INFO">Current page contains link '//a[@href="clients"]'.</msg>
+<arg>//a[@href="clients"]</arg>
+<doc>Verifies link identified by ``locator`` is found from current page.</doc>
+<status status="PASS" start="2024-10-23T14:30:07.792628" elapsed="0.045963"/>
+</kw>
+<kw name="Page Should Contain Link" owner="SeleniumLibrary">
+<msg time="2024-10-23T14:30:07.870360" level="INFO">Current page contains link '//a[@href="newclient"]'.</msg>
+<arg>//a[@href="newclient"]</arg>
+<doc>Verifies link identified by ``locator`` is found from current page.</doc>
+<status status="PASS" start="2024-10-23T14:30:07.839293" elapsed="0.031194"/>
+</kw>
+<kw name="Page Should Contain Link" owner="SeleniumLibrary">
+<msg time="2024-10-23T14:30:07.894790" level="INFO">Current page contains link '//a[@href="initdb"]'.</msg>
+<arg>//a[@href="initdb"]</arg>
+<doc>Verifies link identified by ``locator`` is found from current page.</doc>
+<status status="PASS" start="2024-10-23T14:30:07.870753" elapsed="0.024240"/>
+</kw>
+<status status="PASS" start="2024-10-23T14:30:06.126774" elapsed="1.768598"/>
+</test>
+<test id="s1-t2" name="Valid Init DB" line="18">
+<kw name="Go To" owner="SeleniumLibrary">
+<msg time="2024-10-23T14:30:07.896676" level="INFO">Opening url 'http://localhost:8080'</msg>
+<arg>${LOGIN URL}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<status status="PASS" start="2024-10-23T14:30:07.896389" elapsed="0.027534"/>
+</kw>
+<kw name="Click Link" owner="SeleniumLibrary">
+<msg time="2024-10-23T14:30:07.924643" level="INFO">Clicking link '//a[@href="initdb"]'.</msg>
+<arg>//a[@href="initdb"]</arg>
+<doc>Clicks a link identified by ``locator``.</doc>
+<status status="PASS" start="2024-10-23T14:30:07.924342" elapsed="0.116529"/>
+</kw>
+<kw name="Page Should Contain" owner="SeleniumLibrary">
+<msg time="2024-10-23T14:30:08.065129" level="INFO">Current page contains text 'DB initialized.'.</msg>
+<arg>DB initialized.</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<status status="PASS" start="2024-10-23T14:30:08.041255" elapsed="0.024052"/>
+</kw>
+<status status="PASS" start="2024-10-23T14:30:07.895820" elapsed="0.169831"/>
+</test>
+<test id="s1-t3" name="Valid Insert" line="23">
+<kw name="Get New Client Limit" owner="mytools">
+<msg time="2024-10-23T14:30:08.066733" level="INFO">${LIM} = 10000</msg>
+<var>${LIM}</var>
+<status status="PASS" start="2024-10-23T14:30:08.066463" elapsed="0.000317"/>
+</kw>
+<kw name="Go To" owner="SeleniumLibrary">
+<msg time="2024-10-23T14:30:08.067230" level="INFO">Opening url 'http://localhost:8080'</msg>
+<arg>${LOGIN URL}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<status status="PASS" start="2024-10-23T14:30:08.067003" elapsed="0.027080"/>
+</kw>
+<kw name="Click Link" owner="SeleniumLibrary">
+<msg time="2024-10-23T14:30:08.094962" level="INFO">Clicking link '//a[@href="newclient"]'.</msg>
+<arg>//a[@href="newclient"]</arg>
+<doc>Clicks a link identified by ``locator``.</doc>
+<status status="PASS" start="2024-10-23T14:30:08.094571" elapsed="0.092124"/>
+</kw>
+<kw name="Page Should Contain" owner="SeleniumLibrary">
+<msg time="2024-10-23T14:30:08.214531" level="INFO">Current page contains text 'New Client'.</msg>
+<arg>New Client</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<status status="PASS" start="2024-10-23T14:30:08.187114" elapsed="0.027581"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-10-23T14:30:08.215431" level="INFO">Typing text '1' into text field '//input[@name="id"]'.</msg>
+<arg>//input[@name="id"]</arg>
+<arg>${ID}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-10-23T14:30:08.215034" elapsed="0.133971"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-10-23T14:30:08.349818" level="INFO">Typing text '10000' into text field '//input[@name="lim"]'.</msg>
+<arg>//input[@name="lim"]</arg>
+<arg>${LIM}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-10-23T14:30:08.349428" elapsed="0.108139"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-10-23T14:30:08.458285" level="INFO">Clicking element '//input[@type="submit"]'.</msg>
+<arg>//input[@type="submit"]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-10-23T14:30:08.457974" elapsed="0.074036"/>
+</kw>
+<kw name="Page Should Contain" owner="SeleniumLibrary">
+<msg time="2024-10-23T14:30:08.560878" level="INFO">Current page contains text 'Client inserted'.</msg>
+<arg>Client inserted</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<status status="PASS" start="2024-10-23T14:30:08.532640" elapsed="0.028424"/>
+</kw>
+<kw name="Set Global Variable" owner="BuiltIn">
+<msg time="2024-10-23T14:30:08.561876" level="INFO">${LIM} = 10000</msg>
+<arg>${LIM}</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<status status="PASS" start="2024-10-23T14:30:08.561494" elapsed="0.000443"/>
+</kw>
+<status status="PASS" start="2024-10-23T14:30:08.066004" elapsed="0.496145"/>
+</test>
+<test id="s1-t4" name="Valid Listing" line="34">
+<kw name="Go To" owner="SeleniumLibrary">
+<msg time="2024-10-23T14:30:08.562972" level="INFO">Opening url 'http://localhost:8080'</msg>
+<arg>${LOGIN URL}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<status status="PASS" start="2024-10-23T14:30:08.562774" elapsed="0.020381"/>
+</kw>
+<kw name="Click Link" owner="SeleniumLibrary">
+<msg time="2024-10-23T14:30:08.583823" level="INFO">Clicking link '//a[@href="clients"]'.</msg>
+<arg>//a[@href="clients"]</arg>
+<doc>Clicks a link identified by ``locator``.</doc>
+<status status="PASS" start="2024-10-23T14:30:08.583530" elapsed="0.093305"/>
+</kw>
+<kw name="Page Should Contain" owner="SeleniumLibrary">
+<msg time="2024-10-23T14:30:08.703953" level="INFO">Current page contains text '1'.</msg>
+<arg>${ID}</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<status status="PASS" start="2024-10-23T14:30:08.677359" elapsed="0.027080"/>
+</kw>
+<kw name="Page Should Contain" owner="SeleniumLibrary">
+<msg time="2024-10-23T14:30:08.727395" level="INFO">Current page contains text '10000'.</msg>
+<arg>${LIM}</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<status status="PASS" start="2024-10-23T14:30:08.705061" elapsed="0.022503"/>
+</kw>
+<kw name="Close Browser" owner="SeleniumLibrary" type="TEARDOWN">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2024-10-23T14:30:08.728086" elapsed="0.087502"/>
+</kw>
+<status status="PASS" start="2024-10-23T14:30:08.562423" elapsed="0.253510"/>
+</test>
+<doc>Check new client insert</doc>
+<status status="PASS" start="2024-10-23T14:30:06.011848" elapsed="2.805187"/>
+</suite>
+<statistics>
+<total>
+<stat pass="4" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="4" fail="0" skip="0" id="s1" name="T6">T6</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
