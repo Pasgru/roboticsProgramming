@@ -8,7 +8,7 @@ def getconn():
 
 @app.route("/")
 def credit():
-    return """<h1>Credit App on my Laptop</h1>
+    return """<h1>The Credit App on my Laptop</h1>
     <ul>
     <li><a href=clients>Clients</a></li>
     <li><a href=newclient>New Client</a></li>
